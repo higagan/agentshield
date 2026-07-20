@@ -1,8 +1,8 @@
-"""Tests for the AgentShield shield_tool decorator."""
+"""Tests for the ModelFuzz shield_tool decorator."""
 
 import pytest
 
-from agentshield import AgentShieldBlockError, shield_tool
+from modelfuzz import ModelFuzzBlockError, shield_tool
 
 
 @shield_tool()
@@ -15,9 +15,9 @@ class TestShieldToolDecorator:
     """Tests for the shield_tool decorator."""
 
     def test_malicious_call_raises_block_error(self):
-        """Assert that a malicious call raises AgentShieldBlockError."""
+        """Assert that a malicious call raises ModelFuzzBlockError."""
         malicious_body = "My password is 12345"
-        with pytest.raises(AgentShieldBlockError):
+        with pytest.raises(ModelFuzzBlockError):
             send_email("alice@example.com", "Hello", malicious_body)
 
     def test_safe_call_executes_successfully(self):

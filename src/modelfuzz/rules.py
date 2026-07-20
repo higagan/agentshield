@@ -1,4 +1,4 @@
-"""Security rules for AgentShield."""
+"""Security rules for ModelFuzz."""
 
 from dataclasses import dataclass
 from urllib.parse import urlparse

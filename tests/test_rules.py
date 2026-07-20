@@ -1,8 +1,8 @@
-"""Tests for AgentShield security rules."""
+"""Tests for ModelFuzz security rules."""
 
 import pytest
 
-from agentshield.rules import SensitiveDataFilter, URLAllowList
+from modelfuzz.rules import SensitiveDataFilter, URLAllowList
 
 
 class TestURLAllowList:

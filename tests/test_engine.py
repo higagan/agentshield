@@ -1,7 +1,7 @@
-"""Tests for the AgentShield PolicyEngine."""
+"""Tests for the ModelFuzz PolicyEngine."""
 
-from agentshield.engine import PolicyEngine, PolicyResult
-from agentshield.rules import Violation
+from modelfuzz.engine import PolicyEngine, PolicyResult
+from modelfuzz.rules import Violation
 
 
 class TestPolicyEngine:

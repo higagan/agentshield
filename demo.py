@@ -1,6 +1,6 @@
-"""Demo script showing AgentShield blocking a data exfiltration attack."""
+"""Demo script showing ModelFuzz blocking a data exfiltration attack."""
 
-from agentshield import AgentShieldBlockError, shield_tool
+from modelfuzz import ModelFuzzBlockError, shield_tool
 
 # --- ANSI Color Codes ---
 RED = "\033[91m"
@@ -60,7 +60,7 @@ ATTACK_PAYLOADS = [
 
 
 def main() -> None:
-    print_separator("AGENTSHIELD DEMO: PROMPT INJECTION DEFENSE", YELLOW)
+    print_separator("MODELFUZZ DEMO: PROMPT INJECTION DEFENSE", YELLOW)
 
     # --- Part 1: The Breach ---
     print_separator("PART 1: THE BREACH (UNGUARDED)", RED)
@@ -72,19 +72,19 @@ def main() -> None:
     print_summary_box("🚨 BREACH", "Data exfiltrated to attacker@evil.com", RED)
 
     # --- Part 2: The Shield ---
-    print_separator("PART 2: THE SHIELD (AGENTSHIELD ACTIVE)", GREEN)
+    print_separator("PART 2: THE SHIELD (MODELFUZZ ACTIVE)", GREEN)
     payload2 = ATTACK_PAYLOADS[1]  # Using a different payload for variety, but same intent
     print(f"{GREEN}[+] GUARDED AGENT: Executing tool with malicious payload...{RESET}")
     print(f"{GREEN}  [>] Tool Call: send_email(**{payload2}){RESET}\n")
-    print(f"{GREEN}  [+] AgentShield is intercepting the call...{RESET}")
+    print(f"{GREEN}  [+] ModelFuzz is intercepting the call...{RESET}")
 
     try:
         send_email_guarded(**payload2)
-    except AgentShieldBlockError as e:
-        print(f"{GREEN}\n  [✓] AgentShield caught a violation:{RESET}")
+    except ModelFuzzBlockError as e:
+        print(f"{GREEN}\n  [✓] ModelFuzz caught a violation:{RESET}")
         print(f"{GREEN}      Reason: {e}{RESET}")
         print_summary_box(
-            "🛡️ AGENTSHIELD BLOCKED",
+            "🛡️ MODELFUZZ BLOCKED",
             "Sensitive data exfiltration stopped.",
             GREEN,
         )

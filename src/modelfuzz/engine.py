@@ -1,9 +1,9 @@
-"""Policy engine for AgentShield."""
+"""Policy engine for ModelFuzz."""
 
 from collections.abc import Callable
 from dataclasses import dataclass
 
-from agentshield.rules import Violation
+from modelfuzz.rules import Violation
 
 
 @dataclass

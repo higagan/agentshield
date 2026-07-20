@@ -4,9 +4,9 @@ import functools
 from collections.abc import Callable
 from typing import ParamSpec, TypeVar
 
-from agentshield.engine import PolicyEngine
-from agentshield.exceptions import AgentShieldBlockError
-from agentshield.rules import SensitiveDataFilter
+from modelfuzz.engine import PolicyEngine
+from modelfuzz.exceptions import ModelFuzzBlockError
+from modelfuzz.rules import SensitiveDataFilter
 
 P = ParamSpec("P")
 R = TypeVar("R")
@@ -35,9 +35,9 @@ def shield_tool(engine: PolicyEngine | None = None) -> Callable[[Callable[P, R]]
             for arg in list(args) + list(kwargs.values()):
                 result = actual_engine.run(arg)
                 if not result.allowed:
-                    raise AgentShieldBlockError(result.reason or "Call blocked by policy")
+                    raise ModelFuzzBlockError(result.reason or "Call blocked by policy")
 
-            print(f"AgentShield Intercepted: {func.__name__}")
+            print(f"ModelFuzz Intercepted: {func.__name__}")
             return func(*args, **kwargs)
 
         return wrapper
