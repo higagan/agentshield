@@ -1,5 +1,7 @@
 """ModelFuzz: a lightweight shield for intercepting agent tool calls."""
 
+from importlib.metadata import version as _version
+
 from modelfuzz.decorator import shield_tool
 from modelfuzz.engine import PolicyEngine, PolicyResult
 from modelfuzz.exceptions import ModelFuzzBlockError
@@ -14,4 +16,4 @@ __all__ = [
     "PolicyEngine",
     "PolicyResult",
 ]
-__version__ = "0.1.0"
+__version__ = _version("modelfuzz")
