@@ -7,6 +7,8 @@
 
 **Runtime guardrails for AI agents. Intercept and block unsafe tool calls caused by prompt injection.**
 
+🔗 [Website](https://www.modelfuzz.com) · [LinkedIn](https://www.linkedin.com/company/modelfuzz/) · [PyPI](https://pypi.org/project/modelfuzz/)
+
 ---
 
 ## The Problem
