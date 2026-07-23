@@ -4,6 +4,9 @@ All notable changes to this project are documented here.
 
 ## [Unreleased]
 
+- fix: point PyPI `Homepage` at https://www.modelfuzz.com instead of the GitHub repo
+- docs: add a zero-clone "Try It Now" snippet, verified against the published PyPI package
+- docs: add CHANGELOG.md and SECURITY.md
 - docs: link website, LinkedIn, and PyPI from the README
 - docs: show real `demo.py` and `modelfuzz scan` output with runnable commands
 

@@ -1,6 +1,6 @@
 [project]
 name = "modelfuzz"
-version = "0.2.1"
+version = "0.2.2"
 description = "Runtime guardrails for AI agents."
 readme = "README.md"
 license = { text = "MIT" }
@@ -34,7 +34,7 @@ scan = [
 modelfuzz = "modelfuzz.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/higagan/modelfuzz"
+Homepage = "https://www.modelfuzz.com"
 Repository = "https://github.com/higagan/modelfuzz"
 Issues = "https://github.com/higagan/modelfuzz/issues"
 
